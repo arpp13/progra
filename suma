@@ -1,0 +1,15 @@
+#include "stdafx.h"
+#include "conio.h"
+#include<iostream>
+
+using namespace std;
+
+void main()
+{
+	int a, b, S;
+	cin>>a;
+	cin>>b;
+	S=a+b;
+	cout<<S;
+	getch();
+}
