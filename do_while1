@@ -1,0 +1,42 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "stdlib.h"
+using namespace std;
+
+void main()
+{
+	float i, n, nf, np, p, p1, p2, p3, r;
+	cout << "registro" << endl;
+	cin >> r;
+	p = 0;
+	i = 1;
+	do {
+		if (r==-999) 
+		{
+			i = 2;
+			cout << "incorrecto, digitar -999 para salir o introducir un registro valido" << endl;
+		} 
+		else 
+		{
+			cout << "Introducir nota de parciales: " << endl;
+			cin >> p1;
+			cin >> p2;
+			cin >> p3;
+			cout << "Introducir nota practica" << endl;
+			cin >> np;
+			cout << "Introducir nota del examen final" << endl;
+			cin >> nf;
+			n = ((p1+p2+p3)/3)*0.4+(np*0.2)+(nf*0.4);
+			cout<<"la nota del alumno es: "<<n<<endl;
+			p = p+n;
+			i = i+1;
+		}
+		system("cls");
+		cout << "registro" << endl;
+		cin >> r;
+	} while (r!=-999);
+	p = (p/(i-1));
+	cout << "promedio : " << p << endl;
+	getch();
+}
