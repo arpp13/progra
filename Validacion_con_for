@@ -1,0 +1,28 @@
+//Validacion con la instruccion "for"
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+	cout<<"PROGRAMA PARA CALCULAR EL FACTORIAL DE 1 NUMERO"<<endl;
+	int n=0, f, i;
+	do
+	{
+		if(n<0)
+		{
+			cout<<"Incorrecto"<<endl;
+			cout<<"El numero debe ser un entero positivo"<<endl;
+		}
+		cout<<"Introducir el numero del cual se desea calcular el factorial"<<endl;
+		cin>>n;
+	}while(n<0);
+	f=1;
+	for(i=2; i<=n; i++)
+	{
+		f=f*i;
+	}
+	cout<<"El factorial de "<<n<<" es: "<<f<<endl;
+	getch();
+}
