@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+	cout<<"PROGRAMA PARA CALCULAR LA SUMA DE LOS NUMEROS ENTEROS POSITIVOS COMPRENDIDOS ENTRE 1 Y N"<<endl;
+	int n=0, i=2, s;
+	do
+	{
+		if(n<0)
+		{
+			cout<<"Incorrecto"<<endl;
+			cout<<"El numero debe ser un entero positivo"<<endl;
+		}
+		cout<<"Introducir el maximo numero que desea incluir en la serie"<<endl;
+		cin>>n;
+	}while(n<0);
+	s=1;
+	while(i<=n)
+	{
+		s=s+i;
+		i=i+1;
+	}
+	cout<<"La suma de los numeros enteros positivos comprendidos entre 1 y "<<n<<" es: "<<s<<endl;
+	getch();
+}
