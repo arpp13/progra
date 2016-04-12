@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+	cout<<"PROGRAMA PARA CALCULAR LA TABLA DE SUMA EN DECIMAL"<<endl;
+	int a, b, s;
+	a=0;
+	b=0;
+	while(a<=10)
+	{
+		while(b<=10)
+		{
+			s=a+b;
+			cout<<a<<" + "<<b<<" = "<<s<<endl;
+			if(b==10)
+			{
+				cout<<"-----------------------------"<<endl;
+			}
+			b=b+1;
+		}
+		a=a+1;
+		b=0;
+	}
+	getch();
+}
