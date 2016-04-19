@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+void main()
+{
+	int n, fac=1, m, b, i=1, s=1;
+	float t;
+	cout<<"Elija el numero maximo para la suma"<<endl;
+	cin>>n;
+	cout<<"elija la base"<<endl;
+	cin>>b;
+	m=1;
+	t=0;
+	while(m<=n)
+	{
+		while(i<=m)
+		{
+			fac=fac*i;
+			i=i+1;
+		}
+		t=t+s*((powf(b, m)/fac));
+		s=-s;
+		m=m+2;
+	}
+	cout<<"el resultado de la suma es: "<<t<<endl;
+	getch ();
+}
