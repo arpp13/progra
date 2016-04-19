@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+using namespace std;
+void main()
+{
+	int b, n, d=1, r=0, i=0;
+	cout<<"introduzca la base del numero a convertir"<<endl;
+	cin>>b;
+	cout<<"introduzca un numero entero para convertir"<<endl;
+	cin>>n;
+	while(d!=0)
+	{
+		d=n%10;
+		r=r+d*powf(b, i);
+		i=i+1;
+		n=n/10;
+	}
+	cout<<"el numero en decimal es: "<<r<<endl;
+	getch();
+}
