@@ -1,0 +1,53 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include <string>
+using namespace std;
+void main()
+{
+	int cod, aux, np, a, b=0;
+	float me, tp, p, mayor=-999, menor=999999;
+	string nombre;
+	cout<<"introduzca codigo de empleado"<<endl;
+	cin>>cod;
+	tp=0;
+	while(cod!=-999)
+	{
+		cout<<"ingrese el nombre del empleado"<<endl;
+		cin>>nombre;
+		aux=cod;
+		me=0;
+		a=0;
+		while(aux==cod)
+		{
+			cout<<"introduzca el monto del prestamo"<<endl;
+			cin>>p;
+			me=me+p;
+			a=a+1;
+			b=b+a;
+			if(p>mayor)
+			{
+				mayor=p;
+			}
+			if(p<menor)
+			{
+				menor=p;
+			}
+			cout<<"repita el codigo del empleado "<<nombre<<" si tiene mas prestamos"<<endl;
+			cout<<"o introduzca el codigo del siguiente empleado"<<endl;
+			cout<<"o -999 para obtener los datos finales"<<endl;
+			cin>>cod;
+			getch();
+			system("cls");
+		}
+		cout<<"el empleado "<<nombre<<" con codigo"<<aux<<" solicito "<<a<<" prestamos y debe "<<me<<endl;
+		cout<<"EL EMPLEADO "<<nombre<<" NO TIENE MAS PRESTAMOS"<<endl;
+		tp=tp+me;
+	}
+	cout<<"el mayor prestamo es: "<<mayor<<endl;
+	cout<<"el menor prestamo es: "<<menor<<endl;
+	cout<<"el numero deprestamos realizados es: "<<b<<endl;
+	cout<<"el total prestado es: "<<tp<<endl;
+	getch();
+}
