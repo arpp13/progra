@@ -1,0 +1,36 @@
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+float total(float n, float c)
+{
+	float m=n*c;
+	return m;
+}
+void main()
+{
+	float numh, costh, valor, s=0;
+	int n, i=1;
+	cout<<"Introduzca el numero de empleados"<<endl;
+	cin>>n;
+	while(i<=n)
+	{
+		cout<<"Introduzca las horas trabajadas: "<<endl;
+		cin>>numh;
+		cout<<"Introduzca el costo por hora: "<<endl;
+		cin>>costh;
+		valor= total(numh, costh);
+		cout<<"el trabajador "<<i<<" gano un total de: "<<valor<<endl;
+		i=i+1;
+		s=s+valor;
+		getch();
+		system("cls");
+	}
+	cout<<"el total pagado sera: "<<s<<endl;
+	cout<<"SALIR"<<endl;
+	getch();
+}
