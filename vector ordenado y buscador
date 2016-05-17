@@ -1,0 +1,87 @@
+#include "stdafx.h"
+#include <iostream>
+#include "stdlib.h"
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void cargar(double a[], int tam);
+void mostrar(double a[], int tam);
+double promedio(double a[], int tam);
+void ordenar(double a[],int tam);
+int buscar(double a[],int b,int tam);
+void main()
+{
+	double k, N[MAX], prom;
+	int n, pos;
+	do
+	{
+		cout<<"Cuantos elementos va a tener el arreglo"<<endl;
+		cin>>n;
+	} while(n<=0 || n>100);
+	cargar(N, n);
+	cout<<"ingrese el elemento a buscar"<<endl;
+	cin>>k;
+	pos=buscar(N, k, n);
+	if(pos==-1)
+		cout<<"no se encuentra el elemento"<<endl;
+	else
+		cout<<"el elemento esta en la posicion: "<<pos<<endl;
+	ordenar(N, n);
+	mostrar(N, n);
+	prom=promedio(N, n);
+	cout<<"el promedio de los elementos es: "<<prom<<endl;
+	getch();
+}
+
+void cargar(double a[], int tam)
+{
+	cout<<"Introduzca los datos del arreglo"<<endl;
+	for(int i=0; i<tam; i++)
+	{
+		cout<<"V ["<<i<<"] : ";
+		cin>>a[i];
+	}
+	getch();
+	system("cls");
+}
+
+void mostrar(double a[], int tam)
+{
+	cout<<"El vector ordenado ascendentemente"<<endl;
+	for(int i=0; i<tam; i++)
+	{
+		cout<<"V ["<<i<<"] : "<<a[i]<<endl;
+	}
+}
+
+double promedio(double a[], int tam)
+{
+	double s, p;
+	s=0;
+	for(int i=0; i<tam; i++)
+		s=s+a[i];
+	p=s/tam;
+	return p;
+}
+
+void ordenar(double a[],int tam)
+{
+ for(int i = 0; i< tam - 1 ; i++)
+   for(int j = i; j< tam;j++)
+     if(a[i]>a[j])
+	 {
+       int aux= a[i];
+       a[i]=a[j];
+       a[j]=aux;
+	 }
+}
+int buscar(double a[],int b,int tam)
+{
+	for(int i = 0; i< tam; i++)
+    if(a[i]==b)
+       return i;
+  return -1;
+}
+
+
