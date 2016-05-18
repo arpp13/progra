@@ -1,0 +1,44 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+float fac(float a);
+float potenc(float a, float b);
+void main ()
+{
+	float x, y, potx, i=1, f, s=0;
+	char op;
+	cout<<"Introduzca el numero X: "<<endl;
+	cin>>x;
+	cout<<"Introduzca la potencia Y maxima: "<<endl;
+	cin>>y;
+	while(i<=y)
+	{
+		potx=potenc(x, i);
+		f=fac(i);
+		s=s+(potx/f);
+		i=i+1;
+	}
+	cout<<"El resultado de la serie es: "<<s<<endl;
+	getch();
+}
+
+float fac(float a)
+{
+	float fac=1;
+	for(int i=1; i<=a; i++)
+	{
+		fac=fac*i;
+	}
+	return fac;
+}
+float potenc(float a, float b)
+{
+	float potex=1;
+	for(int i=1; i<=b; i++)
+	{
+		potex=potex*a;
+	}
+	return potex;
+}
