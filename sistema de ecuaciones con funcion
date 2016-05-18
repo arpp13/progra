@@ -1,0 +1,35 @@
+//5.	Construir una función que calcule la solución de un sistema de dos ecuaciones con 2 variables de la forma:
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void solucion(int A, int B, int C, int D, int E, int F, float &x1, float &y1);
+void main()
+{
+	float x, y;
+	int a, b, c, d, e, f;
+	cout<<"programa para resolver un sistema de ecuaciones de la siguiente forma: " << endl;
+	cout<<"Ax+By=C" << endl;
+	cout<<"Dx+Ey=F" << endl;
+	cout<< "introducir coeficiente A: " << endl;
+	cin>>a;
+	cout<< "introducir coeficiente B: " << endl;
+	cin>>b;
+	cout<< "introducir coeficiente C: " << endl;
+	cin>>c;
+	cout<< "introducir coeficiente D: " << endl;
+	cin>>d;
+	cout<< "introducir coeficiente E: " << endl;
+	cin>>e;
+	cout<< "introducir coeficiente F: " << endl;
+	cin>>f;
+	solucion(a, b, c, d, e, f, x, y);
+	cout<<"x= "<<x<<endl;
+	cout<<"y= "<<y<<endl;
+	getch();
+}
+void solucion(int A, int B, int C, int D, int E, int F, float &x1, float &y1)
+{
+	x1=(C*(-E)+F*B)/(A*(-E)+D*B);
+	y1=(C-A*x1)/B;
+}
