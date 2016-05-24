@@ -80,6 +80,8 @@ void mostrar(double a[], int tam)
 	{
 		cout<<"V ["<<i<<"] : "<<a[i]<<endl;
 	}
+	getch();
+	system("cls");
 }
 void traducir(double a[], int tam)
 {
@@ -129,5 +131,6 @@ void traducir(double a[], int tam)
 		cout<<"DIECINUEVE"<<endl;
 	if(a[i]==20)
 		cout<<"VEINTE"<<endl;
-
+	getch();
+	system("cls");
 }
